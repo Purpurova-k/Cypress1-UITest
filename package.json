@@ -1,0 +1,26 @@
+{
+  "name": "cypress1-uitest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Purpurova-k/Cypress1-UITest.git"
+  },
+  "keywords": [
+    "test",
+    "cypress"
+  ],
+  "author": "Kate Purpurova",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Purpurova-k/Cypress1-UITest/issues"
+  },
+  "homepage": "https://github.com/Purpurova-k/Cypress1-UITest#readme",
+  "dependencies": {
+    "cypress": "^9.7.0"
+  }
+}
