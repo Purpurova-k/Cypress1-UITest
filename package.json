@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cy:laptop:headless": "npx cypress run -b chrome -C cypress.config.js",
+    "cy:laptop:headed": "npx cypress run -b firefox --headed -C cypress.config.js",
+    "cy:mobile:headless": "npx cypress run -b edge -C cypress.env.json",
+    "cy:mobile:headed": "npx cypress run -b electron --headed -C cypress.env.json"
   },
   "repository": {
     "type": "git",

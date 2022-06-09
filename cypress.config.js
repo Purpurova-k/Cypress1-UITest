@@ -4,6 +4,8 @@ module.exports = defineConfig({
   e2e: {
     setupNodeEvents(on, config) {},
     baseUrl: "http://localhost:3000",
-    // retries: 3,
+    viewportWidth: 1920,
+    viewportHeight: 1080,
+    retries: 1,
   },
 });
