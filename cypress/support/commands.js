@@ -24,8 +24,6 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-const cypress = require("cypress")
-
 Cypress.Commands.add('login', (login, password) => {
     cy.contains('Log in').click();
     cy.get('#mail').type(login);
@@ -35,4 +33,19 @@ Cypress.Commands.add('login', (login, password) => {
 
 Cypress.Commands.add('logout', () => {
     cy.contains('Log out').click();
-})
+});
+
+Cypress.Commands.add('addBook', (bookName, author) => {
+    cy.get('.d-flex > div > .btn').click();
+    cy.get('#title').type(bookName);
+    cy.get('#authors').type(author);
+    cy.get('[type="submit"]').click();
+});
+
+Cypress.Commands.add('addFavoriteBook', (bookName, author) => {
+    cy.get('.d-flex > div > .btn').click();
+    cy.get('#title').type(bookName);
+    cy.get('#authors').type(author);
+    cy.get('#favorite').check({ force: true }).should('be.checked');
+    cy.get('[type="submit"]').click();
+});
