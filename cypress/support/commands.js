@@ -46,6 +46,7 @@ Cypress.Commands.add('addFavoriteBook', (bookName, author) => {
     cy.get('.d-flex > div > .btn').click();
     cy.get('#title').type(bookName);
     cy.get('#authors').type(author);
-    cy.get('#favorite').check({ force: true }).should('be.checked');
+    cy.get('#favorite').dblclick();
+    cy.get('#favorite').should('be.checked');
     cy.get('[type="submit"]').click();
 });

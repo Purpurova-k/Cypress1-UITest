@@ -1,3 +1,5 @@
+const { expect } = require("chai");
+
 beforeEach(function () {
   cy.visit("http://localhost:3000");
 });
@@ -38,6 +40,7 @@ describe("Tests for books added in favorites", () => {
     cy.login("test@test.com", "test");
     cy.addFavoriteBook("Вино из одуванчиков", "Рэй Брэдберри");
     cy.addFavoriteBook("Идиот", "Федор Достоевский");
+    debugger;
     cy.contains("Favorites").click();
     cy.contains("Вино из одуванчиков").should("be.visible");
     cy.contains("Идиот").should("be.visible");
@@ -51,16 +54,19 @@ describe("Tests for books added in favorites", () => {
     cy.get(".btn-success").then((element) => {
       element.click();
     });
-    cy.contains("Favorites").click();
+    cy.wait(3000);
+    cy.get("h4").should("be.visible").click();
     cy.contains("Маленький принц").should("be.visible");
     cy.contains("Преступление и наказание").should("be.visible");
     cy.get(".btn-secondary").then((element) => {
       element.click();
     });
-    cy.contains("Favorites").click();
-    cy
-      .get(".container > div > div > a")
-      .should("contain", "Please add some book");
+    cy.wait(3000);
+    cy.get("h4").should("be.visible").click();
+    cy.get(".container > div > div > a").should(
+      "contain",
+      "Please add some book"
+    );
     cy.logout();
   });
 });
