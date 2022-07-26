@@ -40,7 +40,6 @@ describe("Tests for books added in favorites", () => {
     cy.login("test@test.com", "test");
     cy.addFavoriteBook("Вино из одуванчиков", "Рэй Брэдберри");
     cy.addFavoriteBook("Идиот", "Федор Достоевский");
-    debugger;
     cy.contains("Favorites").click();
     cy.contains("Вино из одуванчиков").should("be.visible");
     cy.contains("Идиот").should("be.visible");

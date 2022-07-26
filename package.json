@@ -6,8 +6,8 @@
   "scripts": {
     "cy:laptop:headless": "npx cypress run -b chrome -C cypress.config.js",
     "cy:laptop:headed": "npx cypress run -b firefox --headed -C cypress.config.js",
-    "cy:mobile:headless": "npx cypress run -b edge -C cypress.env.json",
-    "cy:mobile:headed": "npx cypress run -b electron --headed"
+    "cy:mobile:headless": "npx cypress run -b edge -C cypress2.config.js",
+    "cy:mobile:headed": "npx cypress run -b electron --headed -C cypress2.config.js"
   },
   "repository": {
     "type": "git",
